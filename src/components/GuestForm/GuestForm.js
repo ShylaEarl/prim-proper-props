@@ -1,17 +1,17 @@
 
-function GuestForm(props){
+function GuestForm({newGuestName, setNewGuestName, newGuestMeal, setNewGuestMeal, handleSubmit}) {
     return(
       <div>
       <h2>Add a new guest</h2>
-      <form onSubmit={props.handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label>
           Name
         </label>
         <input
           type="text"
           placeholder="Name"
-          value={props.newGuestName}
-          onChange={(evt) => props.setNewGuestName(evt.target.value)}
+          value={newGuestName}
+          onChange={(evt) => setNewGuestName(evt.target.value)}
         />
         <div>
           Would this guest like a kid's meal?
@@ -21,9 +21,9 @@ function GuestForm(props){
                 <input
                   type="radio"
                   value={true}
-                  checked={props.newGuestMeal === 'true'}
+                  checked={newGuestMeal === 'true'}
                   name="kidsMeal"
-                  onChange={(evt) => props.setNewGuestMeal(evt.target.value)}
+                  onChange={(evt) => setNewGuestMeal(evt.target.value)}
                 />
                 Yes, this guest would like a Kid's Meal
               </label>
@@ -33,9 +33,9 @@ function GuestForm(props){
                 <input
                   type="radio"
                   value={false}
-                  checked={props.newGuestMeal === 'false'}
+                  checked={newGuestMeal === 'false'}
                   name="kidsMeal"
-                  onChange={(evt) => props.setNewGuestMeal(evt.target.value)}
+                  onChange={(evt) => setNewGuestMeal(evt.target.value)}
                 />
                 No, this guest would not like a Kid's Meal
               </label>
@@ -49,3 +49,4 @@ function GuestForm(props){
 }
 
 export default GuestForm;
+

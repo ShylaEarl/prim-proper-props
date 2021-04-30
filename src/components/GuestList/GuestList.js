@@ -11,12 +11,12 @@ function GuestList(props){
             </tr>
             </thead>
             <tbody>
-            {props.list.map(guest => (
-                <tr key={guest.id}>
-                <td>{guest.name}</td>
-                <td>{String(guest.kidsMeal)}</td>
-                </tr>
-            ))}
+              {props.list.map(guest => (
+                  <tr key={guest.id}>
+                  <td>{guest.name}</td>
+                  <td>{String(guest.kidsMeal)}</td>
+                  </tr>
+              ))}
             </tbody>
         </table>
       </div>
